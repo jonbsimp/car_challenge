@@ -1,5 +1,5 @@
 class Vehicle
-  attr_accessor :year, :model
+  attr_accessor :year, :model, :wheels, :horn, :lights, :speed, :signal, :make
 
   def initialize(year, model)
     @year = year
@@ -10,17 +10,51 @@ end
 new_vehicle1 = Vehicle.new(2019, "A")
 
 class Car < Vehicle
-    attr_accessor :wheels, :horn, :lights
 
     def initialize(year, model)
         super(year, model)
         @wheels = 4
         @horn = "BEEP!"
         @lights = "off"
+        @signal = "off"
+        @speed = 0
     end
 
-    def lights_on
-      @lights = "on"
+    def info
+        car_info = ["Make: #{@make}", "Year: #{@year}", "Model: #{@model}", "Lights: #{@lights}", "Signal: #{@signal}", "Speed: #{@speed}"]
+    end
+
+    def lights(x)
+        if x.downcase == "on"
+            @lights = "on"
+        elsif x.downcase == "off"
+            @lights = "off"
+        else
+            "Type either on or off"
+        end
+    end
+
+    def signal(x)
+        if x.downcase == "left"
+            @signal = "left"
+        elsif x.downcase == "right"
+            @signal = "right"
+        else
+            "Type left of right"
+        end
+    end
+
+    def accelerate
+        @speed += @accelerator
+    end
+
+    def brake
+        @speed -= @decelerator
+        if @speed < 0
+            @speed == 0
+        else
+          @speed
+        end
     end
 end
 
@@ -28,15 +62,6 @@ new_car1 = Car.new(2019, "A")
 
 p new_car1.wheels
 p new_vehicle1.year
-
-
-
-
-
-
-
-
-
 
 
 # Story:	As a programmer, I can make a vehicle. Hint:	Test that Vehicle.new does not raise any errors.
