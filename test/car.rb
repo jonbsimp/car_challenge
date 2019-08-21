@@ -64,6 +64,7 @@ p new_car1.wheels
 p new_vehicle1.year
 
 
+
 # Story:	As a programmer, I can make a vehicle. Hint:	Test that Vehicle.new does not raise any errors.
 #
 # Story:	As a programmer, I can make a car. Hint:	Test that creating an instance of the new class does not raise any errors.
