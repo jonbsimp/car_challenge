@@ -2,10 +2,11 @@
 
 require 'rspec'
 require_relative 'car'
-require_relative 'classtoyota'
+require_relative 'toyota'
 
 describe "Toyota" do
-   my_toyota1 = Toyota.new(2010, "Camry")
+
+my_toyota1 = Toyota.new(2010, "Camry")
 
   it "has to be real" do
     expect{Toyota.new(2010, "Camry")}.to_not raise_error

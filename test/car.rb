@@ -24,14 +24,8 @@ class Car < Vehicle
         car_info = ["Make: #{@make}", "Year: #{@year}", "Model: #{@model}", "Lights: #{@lights}", "Signal: #{@signal}", "Speed: #{@speed}"]
     end
 
-    def lights(x)
-        if x.downcase == "on"
-            @lights = "on"
-        elsif x.downcase == "off"
-            @lights = "off"
-        else
-            "Type either on or off"
-        end
+    def lights_on
+        @lights = "on"
     end
 
     def signal(x)

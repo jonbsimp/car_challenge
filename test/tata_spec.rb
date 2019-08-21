@@ -4,7 +4,8 @@ require_relative 'tata'
 
 
 describe "Tata" do
- new_tata1 = Tata.new(2005)
+
+new_tata1 = Tata.new(2005, "Simpson")
 
   it "has to be real" do
     expect{Tata.new(2005, "Simpson")}.to_not raise_error
